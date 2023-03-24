@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <title>Frontend Mentor | Calculator app</title>
+</head>
+<body>
+  <div class="calculator-container">
+    <div class="title-and-theme-toggle-container">
+      <h4 class="title">calc</h4>
+      <div class="theme-container">
+        <h5>theme</h5>
+        <div>
+          <div class="toggle-number">
+            <h6>1</h6>
+            <h6>2</h6>
+            <h6>3</h6>
+          </div>
+          <div class="toggle-background">
+            <label class="custom-radio-button">
+              <input id="blue" name="toggle-state" type="radio" checked />
+              <span class="checkmark"></span>
+            </label>
+          
+            <label class="custom-radio-button">
+              <input id="gray" name="toggle-state" type="radio" />
+              <span class="checkmark"></span>
+            </label>
+          
+            <label class="custom-radio-button">
+              <input id="violet" name="toggle-state" type="radio" />
+              <span class="checkmark"></span>
+            </label>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="calculator-display">
+      <h1 data-display>0</h1>
+    </div>
+    <div class="calculator-buttons">
+      <button data-number class="number-and-operation">7</button>
+      <button data-number class="number-and-operation">8</button>
+      <button data-number class="number-and-operation">9</button>
+      <button data-delete class="delBtn">del</button>
+      <button data-number class="number-and-operation">4</button>
+      <button data-number class="number-and-operation">5</button>
+      <button data-number class="number-and-operation">6</button>
+      <button data-operation class="number-and-operation">+</button>
+      <button data-number class="number-and-operation">1</button>
+      <button data-number class="number-and-operation">2</button>
+      <button data-number class="number-and-operation">3</button>
+      <button data-operation class="number-and-operation">-</button>
+      <button data-decimal class="number-and-operation">.</button>
+      <button data-number class="number-and-operation">0</button>
+      <button data-operation class="number-and-operation">/</button>
+      <button data-operation class="number-and-operation">*</button>
+      <button data-resetAll class="resetBtn">reset</button>
+      <button data-operation  class="equalBtn">=</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

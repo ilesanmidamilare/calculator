@@ -1,0 +1,329 @@
+/* Reset css */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+}
+
+html { 
+    color-scheme: dark light;
+}
+
+img, picture, svg, video {
+    display: block;
+    max-width: 100%;
+}
+
+/* Reset Ending*/
+
+:root{ 
+/* #### Backgrounds */
+--main-background: hsl(222, 26%, 31%);
+--toggle-background:  hsl(223, 31%, 20%);
+--keypad-background: hsl(223, 31%, 20%);
+--screen-background: hsl(224, 36%, 15%);
+
+/* #### Keys */
+--key-background-3: hsl(225, 21%, 49%);
+--key-shadow-3: hsl(224, 28%, 35%);
+--key-background-2: hsl(6, 63%, 50%);
+--toggle: hsl(6, 63%, 50%);
+--key-shadow-2: hsl(6, 70%, 34%);
+--key-background-1: hsl(30, 25%, 89%);
+--key-shadow-1: hsl(28, 16%, 65%);
+
+/* #### Text */
+--text-alt:  hsl(0, 0%, 100%);
+--text-other-color: hsl(221, 14%, 31%);
+--text-white: hsl(0, 0%, 100%);
+
+
+}
+
+[data-theme="gray"]{
+/* #### Backgrounds */
+--main-background: hsl(0, 0%, 90%);
+--toggle-background: hsl(0, 5%, 81%);
+--keypad-background: hsl(0, 5%, 81%);
+--screen-background: hsl(0, 0%, 93%);
+
+/* #### Keys */
+--key-background-3: hsl(185, 42%, 37%);
+--key-shadow-3: hsl(185, 58%, 25%);
+--key-background-2: hsl(25, 98%, 40%);
+--toggle: hsl(25, 98%, 40%);
+--key-shadow-2: hsl(25, 99%, 27%);
+--key-background-1: hsl(45, 7%, 89%);
+--key-shadow-1: hsl(35, 11%, 61%);
+
+/* #### Text */
+--text-alt:  hsl(60, 10%, 19%);
+--text-other-color: hsl(60, 10%, 19%);
+--text-white: hsl(0, 0%, 100%);
+}
+
+[data-theme="violet"]{
+/* #### Backgrounds */
+--main-background: hsl(268, 75%, 9%);
+--toggle-background: hsl(268, 71%, 12%);
+--keypad-background: hsl(268, 71%, 12%);
+--screen-background: hsl(268, 71%, 12%);
+
+/* #### Keys */
+--key-background-3: hsl(281, 89%, 26%);
+--key-shadow-3: hsl(285, 91%, 52%);
+--key-background-2: hsl(176, 100%, 44%);
+--toggle: hsl(176, 100%, 44%);
+--key-shadow-2: hsl(177, 92%, 70%);
+--key-background-1: hsl(268, 47%, 21%);
+--key-shadow-1: hsl(290, 70%, 36%);
+
+/* #### Text */
+--text-alt:  hsl(52, 100%, 62%);
+--text-other-color: hsl(52, 100%, 62%);
+--text-white: hsl(0, 0%, 100%);
+}
+
+
+
+body {
+    background-color: var(--main-background);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 700;
+}
+
+.calculator-container {
+    width: 400px;
+    height: auto;
+}
+
+.calculator-display {
+    background-color: var(--screen-background);
+    border-radius: 7px;
+    padding: 20px;
+    color: var(--text-other-color);
+    text-align: end;
+    height: auto;
+    overflow-y: auto;
+}
+
+/* Custom scrollbar */
+/* width */
+::-webkit-scrollbar {
+width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+background: #555;
+}
+
+
+.calculator-display h1 {
+    font-size: 50px;
+    margin: 0px;
+    color: var(--text-alt);
+}
+
+.calculator-buttons{
+    background-color: var(--keypad-background);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-top: 20px;
+    padding: 30px;
+    border-radius: 7px;
+}
+
+.calculator-buttons .number-and-operation {
+    background-color: var(--key-background-1);
+    box-shadow: 0px 2px 0px var(--key-shadow-1);
+    color: var(--text-other-color); 
+}
+
+.calculator-buttons button {
+    padding: 12px 15px;
+    border-radius: 7px;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+   
+}
+
+.calculator-buttons button:hover {
+    filter: brightness(150%);
+}
+
+.resetBtn {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    text-transform: uppercase;
+    background-color: var(--key-background-3);
+    box-shadow: 0px 2px 0px var(--key-shadow-3);
+    color: var(--text-white);
+    
+}
+
+.equalBtn {
+    grid-column-start: 3;
+    grid-column-end: 5;
+    background-color: var(--key-background-2);
+    box-shadow: 0px 2px 0px var(--key-shadow-2);
+    color: var(--text-white);
+}
+
+
+.delBtn {
+    text-transform: uppercase;
+    background-color: var(--key-background-3);
+    box-shadow: 0px 2px 0px var(--key-shadow-3);
+    color: var(--text-white);
+}
+
+
+/* theme */
+.title-and-theme-toggle-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 20px;   
+}
+
+.theme-container {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    text-transform: uppercase;
+    color: var(--text-alt);
+}
+
+.toggle-number{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 8px;
+    padding-left: 6px;
+    padding-right: 6px;
+    margin-bottom: 1px;
+}
+
+.theme-container h5{
+    font-size: 8px;
+    align-self: self-end;
+    letter-spacing: 1px;
+    padding-bottom: 4px;
+}
+
+.title-and-theme-toggle-container h4 {
+    font-size: 8px;
+    align-self: self-end;
+    color: var(--text-alt);
+    font-size: 20px;
+}
+
+.toggle-background {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: var(--toggle-background);
+    border-radius: 30px;
+}
+ 
+.custom-radio-button {
+    width: 15px;
+    height: 15px;
+    /* border: 2px solid white; */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.custom-radio-button input {
+    display: none;
+}
+
+.custom-radio-button .checkmark {
+    width: calc(100% - 6px);
+    height: calc(100% - 6px);
+    background-color: var(--toggle);
+    border-radius: 50%;
+    display: inline-block;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    cursor: pointer;
+ }
+ 
+
+ .custom-radio-button input:checked + .checkmark {
+    opacity: 1;
+    display: inline-block;
+ }
+ 
+ @media screen and (max-width: 600px){
+    .calculator-container {
+        width: 300px;
+        height: auto;
+    }
+
+    .calculator-buttons button {
+        padding: 20px 10px;
+        border-radius: 7px;
+        border: none;
+        cursor: pointer;
+        font-size: 20px;
+    }
+
+    .delBtn {
+        font-size: 5px;
+    }
+    .resetBtn {
+        font-size: 5px;
+    }
+
+    .calculator-display h1 {
+        font-size: 30px;
+    }
+
+    .calculator-buttons{
+        gap: 10px;
+        margin-top: 20px;
+        padding: 20px;
+    }
+
+        
+    .theme-container h5{
+        font-size: 10px;
+        padding-bottom: 5px;
+    }
+
+    .title-and-theme-toggle-container h4 {
+        font-size: 30px;
+    }
+
+    .theme-container {
+        gap: 25px;
+    }
+
+    .toggle-number{
+        margin-bottom: 3px;
+    }
+}
